@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "ford_mustang_shelby_avtomobil_130659_2560x1440 (1).jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
