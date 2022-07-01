@@ -11,6 +11,8 @@ import UIKit
 //Простой свифт файл для заполнения списка друзей в таблице.
 class Friends {
     
+    
+    
     let name: String
     let image: UIImage?
   //  let city: String
