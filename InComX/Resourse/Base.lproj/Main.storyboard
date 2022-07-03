@@ -85,8 +85,16 @@
                                                     <constraint firstAttribute="width" constant="48.5" id="e78-CG-G1Z"/>
                                                 </constraints>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fk-1k-cX4">
+                                                <rect key="frame" x="131" y="662" width="154" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="154" id="aTA-B3-qE4"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="My Photo Collection"/>
+                                            </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="3iB-hO-Uzd" firstAttribute="leading" secondItem="EZi-Lh-uAn" secondAttribute="leading" constant="86" id="4cd-gU-1uS"/>
                                             <constraint firstItem="gZR-OP-PLC" firstAttribute="top" secondItem="ikh-xt-N4O" secondAttribute="bottom" constant="22" id="6kU-hU-CD9"/>
@@ -94,9 +102,15 @@
                                             <constraint firstItem="ikh-xt-N4O" firstAttribute="centerX" secondItem="EZi-Lh-uAn" secondAttribute="centerX" id="IhY-1R-n6k"/>
                                             <constraint firstAttribute="trailing" secondItem="gZR-OP-PLC" secondAttribute="trailing" constant="87" id="M6M-f9-l6D"/>
                                             <constraint firstAttribute="bottom" secondItem="3iB-hO-Uzd" secondAttribute="bottom" constant="416.5" id="Zrb-m1-nij"/>
+                                            <constraint firstItem="5fk-1k-cX4" firstAttribute="leading" secondItem="EZi-Lh-uAn" secondAttribute="leading" constant="131" id="a7i-od-O4t"/>
+                                            <constraint firstAttribute="bottom" secondItem="5fk-1k-cX4" secondAttribute="bottom" constant="116" id="dft-9w-IiV"/>
+                                            <constraint firstItem="5fk-1k-cX4" firstAttribute="width" secondItem="ikh-xt-N4O" secondAttribute="width" multiplier="0.641667" id="eDK-P4-ZLG"/>
                                             <constraint firstItem="3iB-hO-Uzd" firstAttribute="top" secondItem="ikh-xt-N4O" secondAttribute="bottom" constant="22" id="edL-Hw-exi"/>
+                                            <constraint firstItem="5fk-1k-cX4" firstAttribute="top" secondItem="gZR-OP-PLC" secondAttribute="bottom" constant="269.5" id="hcA-fU-VAm"/>
                                             <constraint firstAttribute="bottom" secondItem="ikh-xt-N4O" secondAttribute="bottom" constant="514" id="oY1-MN-Aot"/>
+                                            <constraint firstAttribute="trailing" secondItem="5fk-1k-cX4" secondAttribute="trailing" constant="129" id="qjD-dx-q1R"/>
                                             <constraint firstItem="3iB-hO-Uzd" firstAttribute="width" secondItem="gZR-OP-PLC" secondAttribute="width" multiplier="0.757812" id="wSJ-hL-xLx"/>
+                                            <constraint firstAttribute="trailing" secondItem="5fk-1k-cX4" secondAttribute="trailing" constant="129" id="wjh-l8-lrv"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -115,7 +129,6 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ER3-lb-XfZ"/>
-                        <color key="backgroundColor" red="0.95824357155549977" green="1" blue="0.3811686824332835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3n2-yw-ifv" firstAttribute="leading" secondItem="ER3-lb-XfZ" secondAttribute="leading" id="6uI-U2-KBx"/>
                             <constraint firstItem="3n2-yw-ifv" firstAttribute="top" secondItem="ER3-lb-XfZ" secondAttribute="top" id="L6Y-vc-QWH"/>
@@ -712,6 +725,9 @@
         </namedColor>
         <systemColor name="secondarySystemFillColor">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
