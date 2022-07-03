@@ -27,7 +27,7 @@ class ProfileUserViewController: UIViewController {
         
         
         //imageProfileUser.layer.borderWidth = 4.0
-        imageProfileUser.layer.borderColor = UIColor.lightGray.cgColor
+        //imageProfileUser.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     

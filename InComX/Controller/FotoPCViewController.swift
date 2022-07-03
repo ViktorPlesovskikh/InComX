@@ -35,8 +35,9 @@ class FotoPCViewController: UIViewController {
 extension FotoPCViewController: UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
 func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return images.count
+    //"numberOfItemsInSection"-количество элементов в секции
 }
-
+//"cellForItemAt indexPath:" Это ячейча по такому то пути. "indexPath" содержит в себе номер секции и номер ячейки.
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionViewCell
     let image = images[indexPath.item]
