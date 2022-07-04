@@ -27,7 +27,7 @@ class ProfileFriendsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        TableView.register(UINib(nibName: "XibFriendsTableViewCell", bundle: nil), forCellReuseIdentifier: "FriendsXib")
         // Do any additional setup after loading the view.
     }
 
@@ -37,12 +37,12 @@ extension ProfileFriendsViewController: UITableViewDataSource {
         friend.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileFriends", for: indexPath)
-        //стандартная настройка ячейки
-        var content = cell.defaultContentConfiguration()
-        content.text = friend[indexPath.row].name
-        content.image = friend[indexPath.row].image
-        cell.contentConfiguration = content
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsXib", for: indexPath) as! XibFriendsTableViewCell
+        //стандартная настройка ячейки. Можно изменить на другие типы ячеек, чтобы привести к тому виду, который необходим
+        let content = cell
+        content.FriendsVibLabel.text = friend[indexPath.row].name
+        content.FriendsXibImage.image = friend[indexPath.row].image
+        cell.contentConfiguration = content as? UIContentConfiguration
         
         
         return cell
