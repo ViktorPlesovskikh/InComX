@@ -28,7 +28,7 @@
                                                 <rect key="frame" x="87" y="55" width="240" height="240"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ikh-xt-N4O" secondAttribute="height" multiplier="1:1" id="Lgo-q3-yV9"/>
-                                                    <constraint firstAttribute="width" constant="240" id="V3D-QZ-YNv"/>
+                                                    <constraint firstAttribute="width" priority="999" constant="240" id="V3D-QZ-YNv"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -276,6 +276,11 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="EwB-TF-WQR"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In ComX" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peW-s0-8wL">
                                                 <rect key="frame" x="40" y="210" width="334" height="30"/>
