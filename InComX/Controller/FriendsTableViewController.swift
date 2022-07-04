@@ -10,29 +10,49 @@ import UIKit
 class FriendsTableViewController: UITableViewController {
     
     var friend = [
-        Friends(name: "Олеся", image: UIImage(named: "image6")),
-        Friends(name: "Иван", image: UIImage(named: "image6")),
-        Friends(name: "Олег", image: UIImage(named: "image7")),
-        Friends(name: "Петр", image: UIImage(named: "image8")),
-        Friends(name: "Игорь", image: UIImage(named: "image9")),
-        Friends(name: "Павел", image: UIImage(named: "Image_8")),
-        Friends(name: "Дмитрий", image: UIImage(named: "image10")),
-        Friends(name: "Антон", image: UIImage(named: "image11")),
-        Friends(name: "Степан", image: UIImage(named: "image12")),
-        Friends(name: "Ирина", image: UIImage(named: "image13")),
-        Friends(name: "Кирилл", image: UIImage(named: "image14")),
-        Friends(name: "Василий2", image: UIImage(named: "image15")),
+        Friends(name: "Олеся", image: UIImage(named: "image6"), gender: .Female),
+        Friends(name: "Иван", image: UIImage(named: "image6"), gender: .Male),
+        Friends(name: "Олег", image: UIImage(named: "image7"), gender: .Male),
+        Friends(name: "Петр", image: UIImage(named: "image8"), gender: .Male),
+        Friends(name: "Игорь", image: UIImage(named: "image9"), gender: .Male),
+        Friends(name: "Павел", image: UIImage(named: "Image_8"), gender: .Male),
+        Friends(name: "Дмитрий", image: UIImage(named: "image10"), gender: .Male),
+        Friends(name: "Антон", image: UIImage(named: "image11"), gender: .Male),
+        Friends(name: "Степан", image: UIImage(named: "image12"), gender: .Male),
+        Friends(name: "Ирина", image: UIImage(named: "image13"), gender: .Female),
+        Friends(name: "Ксения", image: UIImage(named: "image14"), gender: .Female),
+        Friends(name: "Василий2", image: UIImage(named: "image15"), gender: .Male),
+        Friends(name: "Кирилл", image: UIImage(named: "image15"), gender: .Male),
+        Friends(name: "Виктор", image: UIImage(named: "image15"), gender: .Male),
+        Friends(name: "Фёдор", image: UIImage(named: "image15"), gender: .Male),
+        Friends(name: "Богдан", image: UIImage(named: "image15"), gender: .Male),
+        Friends(name: "Константин", image: UIImage(named: "image15"), gender: .Male),
+        Friends(name: "Адам", image: UIImage(named: "image15"), gender: .Male),
+        Friends(name: "Леонид", image: UIImage(named: "image15"), gender: .Male),
+        Friends(name: "Роман", image: UIImage(named: "image15"), gender: .Male),
+        Friends(name: "Павел", image: UIImage(named: "image15"), gender: .Male),
+        Friends(name: "Артемий", image: UIImage(named: "image15"), gender: .Male),
+        Friends(name: "Петр", image: UIImage(named: "image15"), gender: .Male),
+        Friends(name: "Алексей", image: UIImage(named: "image15"), gender: .Male),
+        Friends(name: "Мирон", image: UIImage(named: "image15"), gender: .Male),
+        Friends(name: "Владимир", image: UIImage(named: "image15"), gender: .Male),
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //регистрация для таблицы шаблона ячейки для того чтобы ее можно было сипользовать в этом контроллере. Ячейку создал в XIB.
+        tableView.register(UINib(nibName: "XibFriendsTableViewCell", bundle: nil), forCellReuseIdentifier: "FriendsXib")
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    
+    
 
     // MARK: - Table view data source
 
@@ -41,19 +61,26 @@ class FriendsTableViewController: UITableViewController {
         return 1
     }
 
+    //Создание разделения по группам ячеек
+    
+    //   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return ("Секция \(section)")
+//    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //Количество строк в секции
         // #warning Incomplete implementation, return the number of rows
         return friend.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCell", for: indexPath) as? FriendsTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsXib", for: indexPath) as? XibFriendsTableViewCell else {
             preconditionFailure("Error")
         }
 
         //cell.ImageProfile 
-        cell.NameFriends.text = friend[indexPath.row].name
-        cell.imageFriends.image = friend[indexPath.row].image
+        cell.FriendsVibLabel.text = friend[indexPath.row].name
+        cell.FriendsXibImage.image = friend[indexPath.row].image
+        
         
 
         // Configure the cell...

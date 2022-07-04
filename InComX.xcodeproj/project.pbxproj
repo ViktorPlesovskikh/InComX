@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1723AB162872C2EF00DFD628 /* XibFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1723AB142872C2EF00DFD628 /* XibFriendsTableViewCell.swift */; };
+		1723AB172872C2EF00DFD628 /* XibFriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1723AB152872C2EF00DFD628 /* XibFriendsTableViewCell.xib */; };
 		173B3E37285D456E00977AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B3E36285D456E00977AB8 /* AppDelegate.swift */; };
 		173B3E39285D456E00977AB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B3E38285D456E00977AB8 /* SceneDelegate.swift */; };
 		173B3E3B285D456E00977AB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B3E3A285D456E00977AB8 /* ViewController.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1723AB142872C2EF00DFD628 /* XibFriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibFriendsTableViewCell.swift; sourceTree = "<group>"; };
+		1723AB152872C2EF00DFD628 /* XibFriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibFriendsTableViewCell.xib; sourceTree = "<group>"; };
 		173B3E33285D456E00977AB8 /* InComX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InComX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		173B3E36285D456E00977AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		173B3E38285D456E00977AB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				1797A9FE2869492A003DE1F8 /* FriendsTableViewCell.swift */,
 				17F98A3E286BF60300A696B5 /* FotoProfileCollectionViewCell.swift */,
 				1793F7B2286C7C120065CDD2 /* ImageCollectionViewCell.swift */,
+				1723AB142872C2EF00DFD628 /* XibFriendsTableViewCell.swift */,
+				1723AB152872C2EF00DFD628 /* XibFriendsTableViewCell.xib */,
 			);
 			path = "Friends View Cell";
 			sourceTree = "<group>";
@@ -228,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				173B3E43285D457300977AB8 /* LaunchScreen.storyboard in Resources */,
+				1723AB172872C2EF00DFD628 /* XibFriendsTableViewCell.xib in Resources */,
 				173B3E40285D457300977AB8 /* Assets.xcassets in Resources */,
 				173B3E3E285D456E00977AB8 /* Main.storyboard in Resources */,
 			);
@@ -257,6 +264,7 @@
 				173B3E37285D456E00977AB8 /* AppDelegate.swift in Sources */,
 				17D640A32867468B00E46304 /* OneTabBarViewController.swift in Sources */,
 				17F98A3F286BF60300A696B5 /* FotoProfileCollectionViewCell.swift in Sources */,
+				1723AB162872C2EF00DFD628 /* XibFriendsTableViewCell.swift in Sources */,
 				17D640A52867482A00E46304 /* GroupTableViewController.swift in Sources */,
 				1797AA0328695E48003DE1F8 /* IndividualCollectionViewController.swift in Sources */,
 				173B3E39285D456E00977AB8 /* SceneDelegate.swift in Sources */,
