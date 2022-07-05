@@ -9,6 +9,9 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
     
+    @IBOutlet var SearchBar: UISearchBar!
+    
+    
     var friend = [
         Friends(name: "Олеся", image: UIImage(named: "image29"), gender: .Female),
         Friends(name: "Иван", image: UIImage(named: "krisjanisk"), gender: .Male),
@@ -40,21 +43,43 @@ class FriendsTableViewController: UITableViewController {
     
     //Сортировка списка по начальной букве. Потом только нужно разбивать на секции. Иначе секции будут повторяться.
     var sortedFriends = [Character: [Friends]]()//Это словарь, который будет содержать букву и сортироваться
+    //Поиск
     
-
+    var searchName = [String]()
+    var searching = false
+//    var search = UISearchController()
+//
+//    var filterFriend = [Friends]()
+//    func filterFriends(text:String){
+//        filterFriend.removeAll()
+//
+//        filterFriend = friend.filter({(friend) -> Bool in
+//            return friend.name.lowercased().contains(text.lowercased())
+//        })
+//    }
+//    //проверка на "пустоту" поиска
+//    func searchBarIsEmpty() -> Bool {
+//        return search.searchBar.text?.isEmpty ?? true
+//    }
+//    //функция которая смотрит идет в данный момент поиск или нет
+//    func inSearch() -> Bool {
+//        return search.isActive && !searchBarIsEmpty()
+//    }
+    //добавление функции после фильтра и обновление таблицы друзей
+//    func filterSearchFriends(text:String){
+//       filterFriends(text: text)
+//        tableView.reloadData()
+//    }
+//
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //search = UISearchController(searchResultsController: nil)
+        //search.searchResultsUpdater = self
+        //self.navigationItem.searchController = search
         //регистрация для таблицы шаблона ячейки для того чтобы ее можно было сипользовать в этом контроллере. Ячейку создал в XIB.
         tableView.register(UINib(nibName: "XibFriendsTableViewCell", bundle: nil), forCellReuseIdentifier: "FriendsXib")
         //После того, как создали ниже сортировку нам надо использовать этот метод. Его используем в didload то есть ниже
         self .sortedFriends = sort(friend: friend)// Это итог того, как отсортировали друзей.
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
    //Создаем Метод, который будет сортировать
@@ -86,30 +111,44 @@ class FriendsTableViewController: UITableViewController {
     }
 
     //Создание разделения по группам ячеек
-    
-    //   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return ("Секция \(section)")
-//    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //Количество строк в секции
         // #warning Incomplete implementation, return the number of rows
         let keySorted = sortedFriends.keys.sorted()
         let friends = sortedFriends[keySorted[section]]?.count ?? 0
+        
+       /* if inSearch(){
+            return filterFriend.count
+        }*/
         return friends
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsXib", for: indexPath) as? XibFriendsTableViewCell else {
             preconditionFailure("Error")
+            
         }
+        if searching {
+            cell.FriendsVibLabel.text = searchName[indexPath.row]
+        }else {
+            cell.FriendsVibLabel?.text = friend[indexPath.row]
+        }
+        
 //Создаем параметр который будет содержать нашу первую букву и обращаться к ней будем по секции
         let firstChar = sortedFriends.keys.sorted()[indexPath.section]
         let friends = sortedFriends[firstChar]!
         let friend: Friends = friends[indexPath.row]
-        
+       /*var friend:Friends
+        if inSearch(){
+            friend = filterFriend[indexPath.row]
+        }else {
+            friend = friends[indexPath.row]
+        }*/
         //cell.ImageProfile 
         cell.FriendsVibLabel.text = friend.name
         cell.FriendsXibImage.image = friend.image
+        
         return cell
     }
     
@@ -137,21 +176,7 @@ class FriendsTableViewController: UITableViewController {
                 tableView.reloadData()
             }
     }
-        
-        
-        
-        
-    }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    
+}
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -162,30 +187,16 @@ class FriendsTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+}
+//extension FriendsTableViewController: UISearchResultsUpdating {
+//    func updateSearchResults(for search: UISearchController) {
+//        filterSearchFriends(text: search.searchBar.text!)
+//    }
+//}
+extension FriendsTableViewController:UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchName = friend.filter({$0.prefix(searchText.count) == searchText})
+        searching = true
+        tableView.reloadData()
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
