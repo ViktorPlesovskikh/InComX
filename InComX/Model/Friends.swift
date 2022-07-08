@@ -21,19 +21,11 @@ class Friends {
     let name: String
     let image: UIImage?
     var gender: Gender
-  //  let city: String
-    //let education: String?
-   // var group: Int
-   // var work: String
-//инициализация данных для списка 
+ //инициализация данных для списка
     init(name: String, image:UIImage? = nil, gender:Gender) {
         self.name = name
         self.image = image
         self.gender = gender
-       // self.city = city
-        //self.education = education
-       // self.group = group
-      //  self.work = work
     }
     
 }

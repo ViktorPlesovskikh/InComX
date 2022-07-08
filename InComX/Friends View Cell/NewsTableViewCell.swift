@@ -11,10 +11,7 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet var NewsImage: UIImageView!
     @IBOutlet var NewsName: UILabel!
     @IBOutlet var NewsDescription: UILabel!
-    
-    
-    
-    
+ 
     override func awakeFromNib() {
         
         super.awakeFromNib()

@@ -47,35 +47,9 @@ class FriendsTableViewController: UITableViewController {
     
     var searchName = [String]()
     var searching = false
-//    var search = UISearchController()
-//
-//    var filterFriend = [Friends]()
-//    func filterFriends(text:String){
-//        filterFriend.removeAll()
-//
-//        filterFriend = friend.filter({(friend) -> Bool in
-//            return friend.name.lowercased().contains(text.lowercased())
-//        })
-//    }
-//    //проверка на "пустоту" поиска
-//    func searchBarIsEmpty() -> Bool {
-//        return search.searchBar.text?.isEmpty ?? true
-//    }
-//    //функция которая смотрит идет в данный момент поиск или нет
-//    func inSearch() -> Bool {
-//        return search.isActive && !searchBarIsEmpty()
-//    }
-    //добавление функции после фильтра и обновление таблицы друзей
-//    func filterSearchFriends(text:String){
-//       filterFriends(text: text)
-//        tableView.reloadData()
-//    }
-//
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        //search = UISearchController(searchResultsController: nil)
-        //search.searchResultsUpdater = self
-        //self.navigationItem.searchController = search
         //регистрация для таблицы шаблона ячейки для того чтобы ее можно было сипользовать в этом контроллере. Ячейку создал в XIB.
         tableView.register(UINib(nibName: "XibFriendsTableViewCell", bundle: nil), forCellReuseIdentifier: "FriendsXib")
         //После того, как создали ниже сортировку нам надо использовать этот метод. Его используем в didload то есть ниже
@@ -96,9 +70,7 @@ class FriendsTableViewController: UITableViewController {
                 
             }
                 
-        }
-        
-        
+        }    
         return friendDict
     }
    
@@ -117,10 +89,6 @@ class FriendsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         let keySorted = sortedFriends.keys.sorted()
         let friends = sortedFriends[keySorted[section]]?.count ?? 0
-        
-       /* if inSearch(){
-            return filterFriend.count
-        }*/
         return friends
     }
 
@@ -129,22 +97,12 @@ class FriendsTableViewController: UITableViewController {
             preconditionFailure("Error")
             
         }
-        if searching {
-            cell.FriendsVibLabel.text = searchName[indexPath.row]
-        }else {
-            cell.FriendsVibLabel?.text = friend[indexPath.row]
-        }
         
 //Создаем параметр который будет содержать нашу первую букву и обращаться к ней будем по секции
         let firstChar = sortedFriends.keys.sorted()[indexPath.section]
         let friends = sortedFriends[firstChar]!
         let friend: Friends = friends[indexPath.row]
-       /*var friend:Friends
-        if inSearch(){
-            friend = filterFriend[indexPath.row]
-        }else {
-            friend = friends[indexPath.row]
-        }*/
+       
         //cell.ImageProfile 
         cell.FriendsVibLabel.text = friend.name
         cell.FriendsXibImage.image = friend.image
@@ -188,15 +146,4 @@ class FriendsTableViewController: UITableViewController {
         }    
     }
 }
-//extension FriendsTableViewController: UISearchResultsUpdating {
-//    func updateSearchResults(for search: UISearchController) {
-//        filterSearchFriends(text: search.searchBar.text!)
-//    }
-//}
-extension FriendsTableViewController:UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchName = friend.filter({$0.prefix(searchText.count) == searchText})
-        searching = true
-        tableView.reloadData()
-    }
-}
+

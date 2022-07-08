@@ -24,9 +24,6 @@ class NewsViewController: UIViewController, UITableViewDataSource {
    
 
     @IBOutlet var tableView: UITableView!
-    
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
