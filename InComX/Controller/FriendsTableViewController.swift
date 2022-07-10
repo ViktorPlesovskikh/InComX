@@ -9,8 +9,11 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
     
-    @IBOutlet var SearchBar: UISearchBar!
+    var filtredFriens = [Friends]()
     
+    
+    
+
     
     var friend = [
         Friends(name: "Олеся", image: UIImage(named: "image29"), gender: .Female),
@@ -146,4 +149,3 @@ class FriendsTableViewController: UITableViewController {
         }    
     }
 }
-
