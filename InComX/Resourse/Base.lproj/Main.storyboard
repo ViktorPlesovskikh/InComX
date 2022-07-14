@@ -404,6 +404,8 @@
                     <navigationItem key="navigationItem" id="BL7-8B-83o"/>
                     <connections>
                         <outlet property="EmailTextField" destination="ile-uv-7dE" id="I2D-kK-apA"/>
+                        <outlet property="ImageViewZap" destination="8av-ic-RLJ" id="6LJ-sh-M0L"/>
+                        <outlet property="NameProgZap" destination="peW-s0-8wL" id="1tc-Fl-Zut"/>
                         <outlet property="PassTextField" destination="RKm-3n-yO3" id="uWA-jO-xsn"/>
                         <segue destination="2pp-QT-qqJ" kind="show" identifier="RegisterNow" id="MZ1-Qi-nYL"/>
                     </connections>
