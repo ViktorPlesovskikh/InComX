@@ -24,7 +24,6 @@
 		174ECE44287FB5E100898BF0 /* FullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ECE43287FB5E100898BF0 /* FullScreenViewController.swift */; };
 		174ECE47287FB98500898BF0 /* FullScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ECE45287FB98500898BF0 /* FullScreenCollectionViewCell.swift */; };
 		174ECE48287FB98500898BF0 /* FullScreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 174ECE46287FB98500898BF0 /* FullScreenCollectionViewCell.xib */; };
-		1793F7B1286C73D70065CDD2 /* FotoPCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1793F7B0286C73D70065CDD2 /* FotoPCViewController.swift */; };
 		1797A9FB28694510003DE1F8 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797A9FA28694510003DE1F8 /* FriendsTableViewController.swift */; };
 		1797A9FD28694565003DE1F8 /* ProfileFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797A9FC28694565003DE1F8 /* ProfileFriendsViewController.swift */; };
 		1797A9FF2869492A003DE1F8 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797A9FE2869492A003DE1F8 /* FriendsTableViewCell.swift */; };
@@ -63,7 +62,6 @@
 		174ECE43287FB5E100898BF0 /* FullScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenViewController.swift; sourceTree = "<group>"; };
 		174ECE45287FB98500898BF0 /* FullScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenCollectionViewCell.swift; sourceTree = "<group>"; };
 		174ECE46287FB98500898BF0 /* FullScreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullScreenCollectionViewCell.xib; sourceTree = "<group>"; };
-		1793F7B0286C73D70065CDD2 /* FotoPCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoPCViewController.swift; sourceTree = "<group>"; };
 		1797A9FA28694510003DE1F8 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		1797A9FC28694565003DE1F8 /* ProfileFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFriendsViewController.swift; sourceTree = "<group>"; };
 		1797A9FE2869492A003DE1F8 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
@@ -93,6 +91,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		171C9B4B2884F9B30048CA40 /* My FotoCollection Fullscreen Cell */ = {
+			isa = PBXGroup;
+			children = (
+				174ECE45287FB98500898BF0 /* FullScreenCollectionViewCell.swift */,
+				171C9B472882578E0048CA40 /* myFotoCollectionViewCell.swift */,
+				171C9B482882578E0048CA40 /* myFotoCollectionViewCell.xib */,
+				174ECE46287FB98500898BF0 /* FullScreenCollectionViewCell.xib */,
+			);
+			path = "My FotoCollection Fullscreen Cell";
+			sourceTree = "<group>";
+		};
 		173B3E2A285D456D00977AB8 = {
 			isa = PBXGroup;
 			children = (
@@ -114,17 +123,14 @@
 			children = (
 				173B3E36285D456E00977AB8 /* AppDelegate.swift */,
 				173B3E38285D456E00977AB8 /* SceneDelegate.swift */,
-				174ECE45287FB98500898BF0 /* FullScreenCollectionViewCell.swift */,
-				171C9B472882578E0048CA40 /* myFotoCollectionViewCell.swift */,
-				171C9B482882578E0048CA40 /* myFotoCollectionViewCell.xib */,
-				174ECE46287FB98500898BF0 /* FullScreenCollectionViewCell.xib */,
 				17D6409B286714ED00E46304 /* Controller */,
 				17D6409E2867185400E46304 /* Friends View Cell */,
 				17CCDE62286EDCD1002D0A64 /* Group View Cell */,
-				17D6409F286719EC00E46304 /* Model */,
 				17D640A028671A0C00E46304 /* Extension */,
 				17D640A128671A6700E46304 /* Resourse */,
 				173B3E44285D457300977AB8 /* Info.plist */,
+				171C9B4B2884F9B30048CA40 /* My FotoCollection Fullscreen Cell */,
+				17D6409F286719EC00E46304 /* Model */,
 			);
 			path = InComX;
 			sourceTree = "<group>";
@@ -148,7 +154,6 @@
 				1797AA0228695E48003DE1F8 /* IndividualCollectionViewController.swift */,
 				173B3E3A285D456E00977AB8 /* ViewController.swift */,
 				1742CEDA286AA28E00272B2F /* AddGroupTableViewController.swift */,
-				1793F7B0286C73D70065CDD2 /* FotoPCViewController.swift */,
 				17D640A42867482A00E46304 /* GroupTableViewController.swift */,
 				17B2E9192873E2B100737AA7 /* NewsTableViewController.swift */,
 				17B2E92328743A9C00737AA7 /* NewsViewController.swift */,
@@ -281,7 +286,6 @@
 				1742CED4286A846000272B2F /* Group.swift in Sources */,
 				1797A9FF2869492A003DE1F8 /* FriendsTableViewCell.swift in Sources */,
 				1797AA0728696C06003DE1F8 /* IndividualCollectionViewCell.swift in Sources */,
-				1793F7B1286C73D70065CDD2 /* FotoPCViewController.swift in Sources */,
 				1797A9FB28694510003DE1F8 /* FriendsTableViewController.swift in Sources */,
 				17F98A39286BDEC800A696B5 /* ProfileUser.swift in Sources */,
 				17F98A35286BD50300A696B5 /* ProfileUserViewController.swift in Sources */,
