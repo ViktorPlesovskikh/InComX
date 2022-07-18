@@ -8,13 +8,13 @@
 import UIKit
 
 class FriendsTableViewController: UITableViewController {
-    
+    //вызов анимации появления строк ячеек
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        animateTableView()
+    }
     var filtredFriens = [Friends]()
-    
-    
-    
 
-    
     var friend = [
         Friends(name: "Олеся", image: UIImage(named: "image29"), gender: .Female),
         Friends(name: "Иван", image: UIImage(named: "krisjanisk"), gender: .Male),
@@ -76,10 +76,7 @@ class FriendsTableViewController: UITableViewController {
         }    
         return friendDict
     }
-   
-
-    // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return sortedFriends.keys.count
@@ -148,4 +145,25 @@ class FriendsTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
+   
+    private func animateTableView() {
+        tableView.reloadData()
+        let cells = tableView.visibleCells
+        let tableViewHeight = tableView.bounds.height
+        var delay:Double = 0
+        for cell in cells {
+            cell.transform = CGAffineTransform(translationX: 0, y: tableViewHeight)
+            
+            UIView.animate(withDuration: 1.5,
+                           delay: delay * 0.05,
+                           usingSpringWithDamping: 0.8,
+                           initialSpringVelocity: 0,
+                           options: .curveEaseInOut,
+                           animations: {
+                cell.transform = CGAffineTransform.identity
+            })
+            delay += 1
+        }
+    }
+    
 }
