@@ -5,43 +5,34 @@
 //  Created by Виктор Плесовских on 29.06.2022.
 //
 
-import UIKit
+/*import UIKit
 
 class FotoPCViewController: UIViewController {
 
-    @IBOutlet var BackBarButtonItem: UIBarButtonItem!
-    
-    var images = [UIImage]()
-    let countCells = 1//постоянное количество ячеек=2. Можно сделать любое
-    let ofset: CGFloat = 2.0
    
-    @IBOutlet var imageCollection: UICollectionView! {
-            didSet {
-                imageCollection.dataSource = self
-                imageCollection.delegate = self
-            }
-        }
+    @IBOutlet var BackBarButtonItem: UIBarButtonItem!
+    @IBOutlet var imageCollection: UICollectionView!
+
+    let fotoGallery = FotoGallery()
+    let countCells = 3
+    let ofset:CGFloat = 2.0
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for i in 1...30 {
-            let image = UIImage(named: "image\(i)")!
-            images.append(image)
-        }
-
+        imageCollection.dataSource = self
+        imageCollection.delegate = self
     }
 
 }
 extension FotoPCViewController: UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
 func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return images.count
+    return fotoGallery.images.count
     //"numberOfItemsInSection"-количество элементов в секции
 }
 //"cellForItemAt indexPath:" Это ячейча по такому то пути. "indexPath" содержит в себе номер секции и номер ячейки.
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionViewCell
-    let image = images[indexPath.item]
-    cell.FotoCollViewCell.image = image
+    let image = fotoGallery.images[indexPath.item]
+    cell.fotoView.image = image
     return cell
 }
 
@@ -53,4 +44,11 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
         let spacing = CGFloat((countCells + 1)) * ofset / CGFloat(countCells)
         return CGSize(width: withCell - spacing, height: hieghtCell - (ofset * 2))
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "FullScreenViewController") as! FullScreenViewController
+        vc.fotoGallery = fotoGallery
+        vc.indexPath = indexPath
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
+*/

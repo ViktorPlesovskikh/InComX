@@ -8,11 +8,13 @@
 import UIKit
 
 class ProfileUserViewController: UIViewController {
-    /*let profileUser = [
-    ProfileUser (nameUser: "Viktor", imageUser: UIImage(named: "Profile_image"), cityUser: "Sakhalin")
-    ]
-    */
+
     
+    @IBOutlet var myFoto: UICollectionView!
+    let fotoGallery = FotoGallery()
+    let identifife = "myFotoCollectionViewCell"
+    let countCells = 3
+    let ofset:CGFloat = 2.0
     
     @IBOutlet var imageProfileUser: UIImageView!
     @IBOutlet var NameUserLabel: UILabel!
@@ -20,25 +22,36 @@ class ProfileUserViewController: UIViewController {
    
     @IBOutlet var CityUserLabel: UILabel!
     
-    @IBAction func MyPhotoCollect(_ sender: Any) {
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //imageProfileUser.layer.borderWidth = 4.0
-        //imageProfileUser.layer.borderColor = UIColor.lightGray.cgColor
+        myFoto.delegate = self
+        myFoto.dataSource = self
+        myFoto.register(UINib(nibName: "myFotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: identifife)
     }
-    
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+extension ProfileUserViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return fotoGallery.images.count
+}
+
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifife, for: indexPath) as! myFotoCollectionViewCell
+    cell.fotoView.image = fotoGallery.images[indexPath.item]
+    return cell
+}
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let frameCV = collectionView.frame
+        let withCell = frameCV.width/CGFloat(countCells)//для ширины ячейки
+        let hieghtCell = withCell //Высота ячейки равна ширине
+        //расчет отступов по краям экрана. Необходимо добавить в начале переменные.ВВЕРХУ!
+        let spacing = CGFloat((countCells + 1)) * ofset / CGFloat(countCells)
+        return CGSize(width: withCell - spacing, height: hieghtCell - (ofset * 2))
     }
-    */
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "FullScreenViewController") as! FullScreenViewController
+        vc.fotoGallery = fotoGallery
+        vc.indexPath = indexPath
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
