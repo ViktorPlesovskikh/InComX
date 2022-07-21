@@ -13,5 +13,7 @@ class FriendsTableViewCell: UITableViewCell {
     
     @IBOutlet var NameFriends: UILabel!
     
+    @IBAction func likeButton(_ sender: UIButton) {
+    }
     
 }

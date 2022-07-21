@@ -9,6 +9,8 @@ import UIKit
 
 class NewsTableViewController: UITableViewController {
 
+    
+    
    // Создаем массив
     var news = [
         News(image: UIImage(named:"retro"), nameNews: "Услышано у Водителей", newsDescription: "«АвтоВАЗ» после ухода из России своего основного акционера – французской Renault – сможет выпускать кроссовер Renault Duster под брендом Lada. Об этом «Ведомостям» рассказали два источника в Минпромторге РФ. По словам одного из них, речь идет о выпуске кроссовера второго поколения. Он выпускался на заводе Renault в Москве, который сейчас переходит в собственность властей города, с 2021 г. у «АвтоВАЗа» есть лицензия на производство этой модели, знает собеседник. Наименование модели под брендом Lada ему неизвестно."),
@@ -21,7 +23,9 @@ class NewsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
+    
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

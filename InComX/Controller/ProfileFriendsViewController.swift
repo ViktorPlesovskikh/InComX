@@ -40,7 +40,7 @@ class ProfileFriendsViewController: UIViewController {
         // Do any additional setup after loading the view.
         filtredProfile = friend
     }
-
+    
 }
 extension ProfileFriendsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,8 +53,6 @@ extension ProfileFriendsViewController: UITableViewDataSource {
         content.FriendsVibLabel.text = filtredProfile[indexPath.row].name
         content.FriendsXibImage.image = filtredProfile[indexPath.row].image
         cell.contentConfiguration = content as? UIContentConfiguration
-        
-        
         return cell
     }
 }
@@ -69,3 +67,5 @@ extension ProfileFriendsViewController: UISearchBarDelegate {
         TableView.reloadData()
     }
 }
+
+

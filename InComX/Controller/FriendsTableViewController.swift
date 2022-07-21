@@ -8,13 +8,14 @@
 import UIKit
 
 class FriendsTableViewController: UITableViewController {
+    
     //вызов анимации появления строк ячеек
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animateTableView()
     }
+   
     var filtredFriens = [Friends]()
-
     var friend = [
         Friends(name: "Олеся", image: UIImage(named: "image29"), gender: .Female),
         Friends(name: "Иван", image: UIImage(named: "krisjanisk"), gender: .Male),
