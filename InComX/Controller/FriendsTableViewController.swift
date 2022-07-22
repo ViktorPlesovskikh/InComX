@@ -120,12 +120,16 @@ class FriendsTableViewController: UITableViewController {
            
                destinationVC.title = profileName //Надпись появляется в тапБаре на экране на который переходим
            }//проверка того КУДА/на какой экран мы переходим
+       
+       
+       
+       
        }
     // Ниже это добавление секций с первой буквой
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         String(sortedFriends.keys.sorted()[section])
     }
-       
+
     @IBAction func addSelectFriends(segue: UIStoryboardSegue) {
         if let sourceVC = segue.source as? FriendsTableViewController, //контроль сеги откуда она приходит
         let indexPath = sourceVC.tableView.indexPathForSelectedRow {

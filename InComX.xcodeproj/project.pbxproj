@@ -38,6 +38,7 @@
 		17D6409D286715D200E46304 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D6409C286715D200E46304 /* UIViewController+extension.swift */; };
 		17D640A32867468B00E46304 /* OneTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D640A22867468B00E46304 /* OneTabBarViewController.swift */; };
 		17D640A52867482A00E46304 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D640A42867482A00E46304 /* GroupTableViewController.swift */; };
+		17F5433F288A316F008C525C /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F5433E288A316F008C525C /* LikeControl.swift */; };
 		17F98A35286BD50300A696B5 /* ProfileUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F98A34286BD50300A696B5 /* ProfileUserViewController.swift */; };
 		17F98A39286BDEC800A696B5 /* ProfileUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F98A38286BDEC800A696B5 /* ProfileUser.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,7 @@
 		17D6409C286715D200E46304 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		17D640A22867468B00E46304 /* OneTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTabBarViewController.swift; sourceTree = "<group>"; };
 		17D640A42867482A00E46304 /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
+		17F5433E288A316F008C525C /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
 		17F98A34286BD50300A696B5 /* ProfileUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserViewController.swift; sourceTree = "<group>"; };
 		17F98A38286BDEC800A696B5 /* ProfileUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +149,7 @@
 		17D6409B286714ED00E46304 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				17F5433E288A316F008C525C /* LikeControl.swift */,
 				17D640A22867468B00E46304 /* OneTabBarViewController.swift */,
 				1797A9FC28694565003DE1F8 /* ProfileFriendsViewController.swift */,
 				17F98A34286BD50300A696B5 /* ProfileUserViewController.swift */,
@@ -280,6 +283,7 @@
 			files = (
 				1797A9FD28694565003DE1F8 /* ProfileFriendsViewController.swift in Sources */,
 				173B3E3B285D456E00977AB8 /* ViewController.swift in Sources */,
+				17F5433F288A316F008C525C /* LikeControl.swift in Sources */,
 				17B2E9202873F76700737AA7 /* NewsTableViewCell.swift in Sources */,
 				1742CEDB286AA28E00272B2F /* AddGroupTableViewController.swift in Sources */,
 				1797AA0128695030003DE1F8 /* Friends.swift in Sources */,
