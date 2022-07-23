@@ -12,8 +12,5 @@ class FriendsTableViewCell: UITableViewCell {
     @IBOutlet var imageFriends: UIImageView!
     
     @IBOutlet var NameFriends: UILabel!
-    
-    @IBAction func likeButton(_ sender: UIButton) {
-    }
-    
+
 }

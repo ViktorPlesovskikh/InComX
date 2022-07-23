@@ -9,7 +9,7 @@ import UIKit
 
 class ProfileUserViewController: UIViewController {
 
-    
+
     @IBOutlet var myFoto: UICollectionView!
     let fotoGallery = FotoGallery()
     let identifife = "myFotoCollectionViewCell"
@@ -19,17 +19,29 @@ class ProfileUserViewController: UIViewController {
     @IBOutlet var imageProfileUser: UIImageView!
     @IBOutlet var NameUserLabel: UILabel!
     @IBOutlet var FamilyUserLabel: UILabel!
-   
     @IBOutlet var CityUserLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imageProfileUser.alpha = 0
+        NameUserLabel.alpha = 0
+        FamilyUserLabel.alpha = 0
+        CityUserLabel.alpha = 0
+        UIView.animate(withDuration: 1.5) {
+            self.imageProfileUser.alpha = 1
+            self.NameUserLabel.alpha = 1
+            self.FamilyUserLabel.alpha = 1
+            self.CityUserLabel.alpha = 1
+        }
+       
         myFoto.delegate = self
         myFoto.dataSource = self
         myFoto.register(UINib(nibName: "myFotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: identifife)
     }
 
 }
+
 extension ProfileUserViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return fotoGallery.images.count
@@ -54,4 +66,5 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
         vc.indexPath = indexPath
         self.navigationController?.pushViewController(vc, animated: true)
     }
+
 }

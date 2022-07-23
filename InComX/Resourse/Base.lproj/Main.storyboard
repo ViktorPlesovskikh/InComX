@@ -158,6 +158,10 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="yqU-bj-j75"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="CityUserLabel" destination="I60-00-pdj" id="ShK-sN-G0m"/>
+                        <outlet property="FamilyUserLabel" destination="6kC-Xr-o3R" id="Hzz-Ak-tNe"/>
+                        <outlet property="NameUserLabel" destination="fBF-Yu-rcy" id="xzU-vB-KCZ"/>
+                        <outlet property="imageProfileUser" destination="ikh-xt-N4O" id="sMD-2K-Y90"/>
                         <outlet property="myFoto" destination="sfG-J3-sBj" id="9h6-Fu-hFe"/>
                         <segue destination="H5C-rB-0Br" kind="show" id="Ul0-2N-Klw"/>
                     </connections>

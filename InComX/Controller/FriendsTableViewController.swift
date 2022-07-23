@@ -65,12 +65,7 @@ class FriendsTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "XibFriendsTableViewCell", bundle: nil), forCellReuseIdentifier: "FriendsXib")
         //После того, как создали ниже сортировку нам надо использовать этот метод. Его используем в didload то есть ниже
         self .sortedFriends = sort(friend: friend)// Это итог того, как отсортировали друзей.
-        
-        
-        
     }
-    
-    
    //Создаем Метод, который будет сортировать
     private func sort(friend: [Friends]) -> [Character: [Friends]] {
         var friendDict = [Character: [Friends]]()//Это массив, который будем заполнять
