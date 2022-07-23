@@ -45,6 +45,13 @@ class FriendsTableViewController: UITableViewController {
         Friends(name: "Владимир", image: UIImage(named: "image16"), gender: .Male),
     ]
     
+    @IBOutlet override var tableView: UITableView! {
+        didSet {
+            tableView.dataSource = self
+            tableView.delegate = self
+        }
+    }
+
     //Сортировка списка по начальной букве. Потом только нужно разбивать на секции. Иначе секции будут повторяться.
     var sortedFriends = [Character: [Friends]]()//Это словарь, который будет содержать букву и сортироваться
     //Поиск
@@ -58,7 +65,11 @@ class FriendsTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "XibFriendsTableViewCell", bundle: nil), forCellReuseIdentifier: "FriendsXib")
         //После того, как создали ниже сортировку нам надо использовать этот метод. Его используем в didload то есть ниже
         self .sortedFriends = sort(friend: friend)// Это итог того, как отсортировали друзей.
+        
+        
+        
     }
+    
     
    //Создаем Метод, который будет сортировать
     private func sort(friend: [Friends]) -> [Character: [Friends]] {
@@ -111,20 +122,21 @@ class FriendsTableViewController: UITableViewController {
         return cell
     }
     
+    
        //добавление с помощью Segue(сеги) данных для отображения на следующем экране при нажатии на иконку профиля
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowIndividualColl", sender: nil)
+        
+      }
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if segue.identifier == "IndividualShow", //проверка по какой СЕГЕ идет переход
+           if segue.identifier == "ShowIndividualColl", //проверка по какой СЕГЕ идет переход
            let destinationVC = segue.destination as? IndividualCollectionViewController,
            let indexPath = tableView.indexPathForSelectedRow {//ТО, на какую ячейку нажимаем. Создаем вручную!!!
            let profileName = friend[indexPath.row].name
-           
                destinationVC.title = profileName //Надпись появляется в тапБаре на экране на который переходим
-           }//проверка того КУДА/на какой экран мы переходим
-       
-       
-       
-       
+           }
        }
+    
     // Ниже это добавление секций с первой буквой
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         String(sortedFriends.keys.sorted()[section])
@@ -170,5 +182,6 @@ class FriendsTableViewController: UITableViewController {
             delay += 1
         }
     }
-    
 }
+
+

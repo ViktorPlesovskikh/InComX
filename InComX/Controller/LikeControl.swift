@@ -16,12 +16,5 @@ class LikeControl: UIControl {
         likePicture.backgroundColor = .clear
         likePicture.tintColor = .red
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+    
 }
