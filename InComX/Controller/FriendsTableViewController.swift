@@ -14,6 +14,9 @@ class FriendsTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         animateTableView()
     }
+    
+    
+    
    
     var filtredFriens = [Friends]()
     var friend = [
@@ -177,6 +180,8 @@ class FriendsTableViewController: UITableViewController {
             delay += 1
         }
     }
+    
+    
 }
 
 

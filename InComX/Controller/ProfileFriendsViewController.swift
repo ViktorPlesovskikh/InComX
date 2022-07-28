@@ -16,6 +16,7 @@ class ProfileFriendsViewController: UIViewController {
             SearchBar.delegate = self
         }
     }
+   //переход на этот экран без сеги
     
     
     var friend = [
@@ -66,6 +67,8 @@ extension ProfileFriendsViewController: UISearchBarDelegate {
         }
         TableView.reloadData()
     }
+    
+    
 }
 
 

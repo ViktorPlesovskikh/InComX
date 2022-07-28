@@ -333,7 +333,7 @@
         <!--One Tab Bar View Controller-->
         <scene sceneID="hNN-RU-1Lp">
             <objects>
-                <tabBarController id="2pp-QT-qqJ" customClass="OneTabBarViewController" customModule="InComX" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="OneTabBarViewController" id="2pp-QT-qqJ" customClass="OneTabBarViewController" customModule="InComX" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="UCD-tV-lfR"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R1v-Nj-YDD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -433,7 +433,7 @@
                     <navigationItem key="navigationItem" title="Friends" id="Ctd-jv-ccY">
                         <barButtonItem key="rightBarButtonItem" title="Profile friends" id="W6o-zn-Ueo">
                             <connections>
-                                <segue destination="ACt-wO-ZSI" kind="show" id="TZd-us-zFg"/>
+                                <segue destination="ACt-wO-ZSI" kind="show" id="TQK-9b-wge"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -445,7 +445,7 @@
         <!--Profile Friends View Controller-->
         <scene sceneID="N0Y-aV-RdQ">
             <objects>
-                <viewController id="ACt-wO-ZSI" customClass="ProfileFriendsViewController" customModule="InComX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileFriends" id="ACt-wO-ZSI" customClass="ProfileFriendsViewController" customModule="InComX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="054-Aa-jXb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -893,10 +893,10 @@
             </objects>
             <point key="canvasLocation" x="1929" y="543"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="G5b-Zg-Bwf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jIU-O9-o2z" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jIU-O9-o2z" customClass="CustomNavigationController" customModule="InComX" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="08O-6f-WJi">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

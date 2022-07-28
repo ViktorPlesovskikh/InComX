@@ -24,6 +24,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
               password == "" else {self.show(message: "Необходимо пустое поле")
             return}
         performSegue(withIdentifier: "RegisterNow", sender: nil)
+        
+        
+        let ProfileFriendsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileFriends")
+        ProfileFriendsViewController.modalTransitionStyle = .flipHorizontal
+        ProfileFriendsViewController.modalPresentationStyle = .formSheet
+        
+        self.present(ProfileFriendsViewController, animated: true)
+        
     }
     
     override func viewDidLoad() {
