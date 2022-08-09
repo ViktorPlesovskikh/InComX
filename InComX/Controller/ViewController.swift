@@ -7,11 +7,14 @@
 
 import UIKit
 
-let session = Session.shared
+
 
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
+    // для singletone
+    let session = Session.shared
+    
    //оутлеты для включения запуска при старте приложения. Потом в ДИДЛОАД прописываю альфу появления при старте.
     @IBOutlet var ImageViewZap: UIImageView!
     @IBOutlet var NameProgZap: UILabel!
@@ -53,8 +56,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
       navigationController?.setNavigationBarHidden(true, animated: false)
     
-        session.Userid
-        session.tokenInCom
+       // session.Userid
+        //session.tokenInCom
     
     }
 

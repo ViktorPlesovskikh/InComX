@@ -11,9 +11,7 @@ import Foundation
 class Session {
     
     static var shared = Session()
-    private init() {
-        
-    }
+    private init(){}
     
     var tokenInCom = ""
     var Userid: Int
