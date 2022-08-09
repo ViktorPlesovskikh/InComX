@@ -37,6 +37,7 @@
 		17B2E9202873F76700737AA7 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B2E91F2873F76700737AA7 /* NewsTableViewCell.swift */; };
 		17B2E9222873FA0700737AA7 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B2E9212873FA0700737AA7 /* News.swift */; };
 		17B2E92428743A9C00737AA7 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B2E92328743A9C00737AA7 /* NewsViewController.swift */; };
+		17CB0CE328A266FE006E20F6 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB0CE228A266FE006E20F6 /* Session.swift */; };
 		17D6409D286715D200E46304 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D6409C286715D200E46304 /* UIViewController+extension.swift */; };
 		17D640A32867468B00E46304 /* OneTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D640A22867468B00E46304 /* OneTabBarViewController.swift */; };
 		17D640A52867482A00E46304 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D640A42867482A00E46304 /* GroupTableViewController.swift */; };
@@ -78,6 +79,7 @@
 		17B2E91F2873F76700737AA7 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		17B2E9212873FA0700737AA7 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		17B2E92328743A9C00737AA7 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		17CB0CE228A266FE006E20F6 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		17D6409C286715D200E46304 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		17D640A22867468B00E46304 /* OneTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTabBarViewController.swift; sourceTree = "<group>"; };
 		17D640A42867482A00E46304 /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				173B3E36285D456E00977AB8 /* AppDelegate.swift */,
 				173B3E38285D456E00977AB8 /* SceneDelegate.swift */,
+				17CB0CE228A266FE006E20F6 /* Session.swift */,
 				17D6409B286714ED00E46304 /* Controller */,
 				17D6409E2867185400E46304 /* Friends View Cell */,
 				17CCDE62286EDCD1002D0A64 /* Group View Cell */,
@@ -306,6 +309,7 @@
 				171C9B492882578E0048CA40 /* myFotoCollectionViewCell.swift in Sources */,
 				173B3E37285D456E00977AB8 /* AppDelegate.swift in Sources */,
 				17B2E91A2873E2B100737AA7 /* NewsTableViewController.swift in Sources */,
+				17CB0CE328A266FE006E20F6 /* Session.swift in Sources */,
 				171C9B46288236260048CA40 /* FotoGallery.swift in Sources */,
 				17D640A32867468B00E46304 /* OneTabBarViewController.swift in Sources */,
 				17B2E9222873FA0700737AA7 /* News.swift in Sources */,
