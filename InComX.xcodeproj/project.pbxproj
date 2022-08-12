@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1704022A28A667AB0008B946 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1704022928A667AA0008B946 /* LoginViewController.swift */; };
 		171C9B46288236260048CA40 /* FotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171C9B45288236260048CA40 /* FotoGallery.swift */; };
 		171C9B492882578E0048CA40 /* myFotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171C9B472882578E0048CA40 /* myFotoCollectionViewCell.swift */; };
 		171C9B4A2882578E0048CA40 /* myFotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171C9B482882578E0048CA40 /* myFotoCollectionViewCell.xib */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1704022928A667AA0008B946 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		171C9B45288236260048CA40 /* FotoGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoGallery.swift; sourceTree = "<group>"; };
 		171C9B472882578E0048CA40 /* myFotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myFotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		171C9B482882578E0048CA40 /* myFotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myFotoCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				17B2E9192873E2B100737AA7 /* NewsTableViewController.swift */,
 				17B2E92328743A9C00737AA7 /* NewsViewController.swift */,
 				174ECE43287FB5E100898BF0 /* FullScreenViewController.swift */,
+				1704022928A667AA0008B946 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -229,7 +232,6 @@
 				56E4EDD93517AE1A7BF9A3BA /* Pods-InComX.debug.xcconfig */,
 				1FB4A8685DD98953C3306B2B /* Pods-InComX.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -371,6 +373,7 @@
 				179BC3FA28921C6F00C5FC49 /* CustomNavigationController.swift in Sources */,
 				1797AA0728696C06003DE1F8 /* IndividualCollectionViewCell.swift in Sources */,
 				1797A9FB28694510003DE1F8 /* FriendsTableViewController.swift in Sources */,
+				1704022A28A667AB0008B946 /* LoginViewController.swift in Sources */,
 				17F98A39286BDEC800A696B5 /* ProfileUser.swift in Sources */,
 				17F98A35286BD50300A696B5 /* ProfileUserViewController.swift in Sources */,
 				17D6409D286715D200E46304 /* UIViewController+extension.swift in Sources */,
