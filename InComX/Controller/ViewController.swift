@@ -13,7 +13,7 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate {
 
     // для singletone
-    let session = Session.shared
+   // let session = Session.shared
     
    //оутлеты для включения запуска при старте приложения. Потом в ДИДЛОАД прописываю альфу появления при старте.
     @IBOutlet var ImageViewZap: UIImageView!

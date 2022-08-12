@@ -44,6 +44,7 @@
 		17F5433F288A316F008C525C /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F5433E288A316F008C525C /* LikeControl.swift */; };
 		17F98A35286BD50300A696B5 /* ProfileUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F98A34286BD50300A696B5 /* ProfileUserViewController.swift */; };
 		17F98A39286BDEC800A696B5 /* ProfileUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F98A38286BDEC800A696B5 /* ProfileUser.swift */; };
+		30B779AAF3D6BEE5C5AFD944 /* Pods_InComX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656DC9606E397C76DAE6EF9C /* Pods_InComX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,9 @@
 		17F5433E288A316F008C525C /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
 		17F98A34286BD50300A696B5 /* ProfileUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserViewController.swift; sourceTree = "<group>"; };
 		17F98A38286BDEC800A696B5 /* ProfileUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUser.swift; sourceTree = "<group>"; };
+		1FB4A8685DD98953C3306B2B /* Pods-InComX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InComX.release.xcconfig"; path = "Target Support Files/Pods-InComX/Pods-InComX.release.xcconfig"; sourceTree = "<group>"; };
+		56E4EDD93517AE1A7BF9A3BA /* Pods-InComX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InComX.debug.xcconfig"; path = "Target Support Files/Pods-InComX/Pods-InComX.debug.xcconfig"; sourceTree = "<group>"; };
+		656DC9606E397C76DAE6EF9C /* Pods_InComX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InComX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30B779AAF3D6BEE5C5AFD944 /* Pods_InComX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +120,8 @@
 			children = (
 				173B3E35285D456E00977AB8 /* InComX */,
 				173B3E34285D456E00977AB8 /* Products */,
+				693D10F541BCD4778FD16693 /* Pods */,
+				B93FE221F900A364F3418990 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -216,6 +223,24 @@
 			path = Resourse;
 			sourceTree = "<group>";
 		};
+		693D10F541BCD4778FD16693 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56E4EDD93517AE1A7BF9A3BA /* Pods-InComX.debug.xcconfig */,
+				1FB4A8685DD98953C3306B2B /* Pods-InComX.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B93FE221F900A364F3418990 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				656DC9606E397C76DAE6EF9C /* Pods_InComX.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,9 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 173B3E47285D457300977AB8 /* Build configuration list for PBXNativeTarget "InComX" */;
 			buildPhases = (
+				3CC5F00E3CE30865AF9D7EA0 /* [CP] Check Pods Manifest.lock */,
 				173B3E2F285D456E00977AB8 /* Sources */,
 				173B3E30285D456E00977AB8 /* Frameworks */,
 				173B3E31285D456E00977AB8 /* Resources */,
+				C6EE3AA759E5C519757A208C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,6 +311,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3CC5F00E3CE30865AF9D7EA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InComX-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6EE3AA759E5C519757A208C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InComX/Pods-InComX-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InComX/Pods-InComX-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InComX/Pods-InComX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		173B3E2F285D456E00977AB8 /* Sources */ = {
@@ -462,6 +531,7 @@
 		};
 		173B3E48285D457300977AB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56E4EDD93517AE1A7BF9A3BA /* Pods-InComX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -491,6 +561,7 @@
 		};
 		173B3E49285D457300977AB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FB4A8685DD98953C3306B2B /* Pods-InComX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
