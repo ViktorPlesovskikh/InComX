@@ -8,12 +8,12 @@
 //import Foundation
 //
 //
-//class Session {
+class Session {
 //    
-//    static var shared = Session()
-//    private init(){}
+ static let shared = Session()
+private init(){}
 //    
-//    var tokenInCom = ""
+var token = ""
 //    var Userid: Int
 //
 //    func connectDB() {
@@ -25,4 +25,4 @@
 //        self.Userid 
 //    }
 //
-//}
+}

@@ -8,10 +8,13 @@
 import UIKit
 
 class OneTabBarViewController: UITabBarController {
+    
+    let session = Session.shared
+    let service = Service()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        service.getFriends(token: session.token)
     }
   
 }

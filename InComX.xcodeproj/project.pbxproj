@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1704022A28A667AB0008B946 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1704022928A667AA0008B946 /* LoginViewController.swift */; };
+		1704022C28A920390008B946 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1704022B28A920380008B946 /* Service.swift */; };
 		171C9B46288236260048CA40 /* FotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171C9B45288236260048CA40 /* FotoGallery.swift */; };
 		171C9B492882578E0048CA40 /* myFotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171C9B472882578E0048CA40 /* myFotoCollectionViewCell.swift */; };
 		171C9B4A2882578E0048CA40 /* myFotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171C9B482882578E0048CA40 /* myFotoCollectionViewCell.xib */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		1704022928A667AA0008B946 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1704022B28A920380008B946 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		171C9B45288236260048CA40 /* FotoGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoGallery.swift; sourceTree = "<group>"; };
 		171C9B472882578E0048CA40 /* myFotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myFotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		171C9B482882578E0048CA40 /* myFotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myFotoCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				173B3E36285D456E00977AB8 /* AppDelegate.swift */,
 				173B3E38285D456E00977AB8 /* SceneDelegate.swift */,
 				17CB0CE228A266FE006E20F6 /* Session.swift */,
+				1704022B28A920380008B946 /* Service.swift */,
 				17D6409B286714ED00E46304 /* Controller */,
 				17D6409E2867185400E46304 /* Friends View Cell */,
 				17CCDE62286EDCD1002D0A64 /* Group View Cell */,
@@ -369,6 +372,7 @@
 				179BC3FC28921C9C00C5FC49 /* CustomPush+PopAnimators.swift in Sources */,
 				1797AA0128695030003DE1F8 /* Friends.swift in Sources */,
 				1742CED4286A846000272B2F /* Group.swift in Sources */,
+				1704022C28A920390008B946 /* Service.swift in Sources */,
 				1797A9FF2869492A003DE1F8 /* FriendsTableViewCell.swift in Sources */,
 				179BC3FA28921C6F00C5FC49 /* CustomNavigationController.swift in Sources */,
 				1797AA0728696C06003DE1F8 /* IndividualCollectionViewCell.swift in Sources */,
