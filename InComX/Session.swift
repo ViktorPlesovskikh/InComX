@@ -13,8 +13,9 @@ class Session {
  static let shared = Session()
 private init(){}
 //    
-var token = ""
-//    var Userid: Int
+    var token: String = ""
+ var Userid: Int = 1
+    var userName: String = ""
 //
 //    func connectDB() {
 //        //code

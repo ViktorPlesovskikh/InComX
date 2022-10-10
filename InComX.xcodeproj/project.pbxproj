@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1704022A28A667AB0008B946 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1704022928A667AA0008B946 /* LoginViewController.swift */; };
 		1704022C28A920390008B946 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1704022B28A920380008B946 /* Service.swift */; };
+		170AAF0B28F42007006BDD0E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170AAF0A28F42007006BDD0E /* User.swift */; };
+		170AAF0D28F42021006BDD0E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170AAF0C28F42021006BDD0E /* Photo.swift */; };
 		171C9B46288236260048CA40 /* FotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171C9B45288236260048CA40 /* FotoGallery.swift */; };
 		171C9B492882578E0048CA40 /* myFotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171C9B472882578E0048CA40 /* myFotoCollectionViewCell.swift */; };
 		171C9B4A2882578E0048CA40 /* myFotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171C9B482882578E0048CA40 /* myFotoCollectionViewCell.xib */; };
@@ -52,6 +54,8 @@
 /* Begin PBXFileReference section */
 		1704022928A667AA0008B946 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1704022B28A920380008B946 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		170AAF0A28F42007006BDD0E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		170AAF0C28F42021006BDD0E /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		171C9B45288236260048CA40 /* FotoGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoGallery.swift; sourceTree = "<group>"; };
 		171C9B472882578E0048CA40 /* myFotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myFotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		171C9B482882578E0048CA40 /* myFotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myFotoCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -207,6 +211,8 @@
 				17F98A38286BDEC800A696B5 /* ProfileUser.swift */,
 				17B2E9212873FA0700737AA7 /* News.swift */,
 				171C9B45288236260048CA40 /* FotoGallery.swift */,
+				170AAF0A28F42007006BDD0E /* User.swift */,
+				170AAF0C28F42021006BDD0E /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 				17CB0CE328A266FE006E20F6 /* Session.swift in Sources */,
 				171C9B46288236260048CA40 /* FotoGallery.swift in Sources */,
 				17D640A32867468B00E46304 /* OneTabBarViewController.swift in Sources */,
+				170AAF0B28F42007006BDD0E /* User.swift in Sources */,
 				17B2E9222873FA0700737AA7 /* News.swift in Sources */,
 				17B2E92428743A9C00737AA7 /* NewsViewController.swift in Sources */,
 				1723AB162872C2EF00DFD628 /* XibFriendsTableViewCell.swift in Sources */,
@@ -395,6 +402,7 @@
 				174ECE44287FB5E100898BF0 /* FullScreenViewController.swift in Sources */,
 				1797AA0328695E48003DE1F8 /* IndividualCollectionViewController.swift in Sources */,
 				173B3E39285D456E00977AB8 /* SceneDelegate.swift in Sources */,
+				170AAF0D28F42021006BDD0E /* Photo.swift in Sources */,
 				1742CEDD286AA2AD00272B2F /* AddGroupTableViewCell.swift in Sources */,
 				174ECE47287FB98500898BF0 /* FullScreenCollectionViewCell.swift in Sources */,
 			);
@@ -544,6 +552,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MZ9HW7MNQA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InComX/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
@@ -553,6 +562,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,6 +584,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MZ9HW7MNQA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InComX/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
@@ -583,6 +594,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

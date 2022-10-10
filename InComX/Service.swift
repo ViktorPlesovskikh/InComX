@@ -11,48 +11,57 @@ import Alamofire
 
 class Service {
     let baseUrl = "https://api.vk.com/method"
+    let clientId = "51401281" //id приложения с сайта разработчиков вк.
 //https://api.vk.com/method
 //friends.get
-    func getFriends(token: String){
+    func getFriends(token: String, id: Int, completion: @escaping ([User]) -> Void){
         let url = baseUrl + "/friends.get"
         let parameters: Parameters = [
             "access_token": token,
+            "user_id": id,
             "v": "5.131",
             "count": 100,
             "fields": "city,country"
         ]
-        AF.request(url, method: .get, parameters: parameters).responseJSON {
-            response in
+        AF.request(url, method: .get, parameters: parameters).responseData {
+            response in guard let data = response.value else {return}
+            let users = try? JSONDecoder().decode(FriendsResponse.self, from: data).response.items
+            completion(users!)
             print(response)
         }
     }
     
-    func getGroup(token: String){
+    func getGroup(token: String, id: Int, completion: @escaping ([Group]) -> Void){
         let url = baseUrl + "/groups.get"
         let parameters: Parameters = [
             "access_token": token,
-            "v": "5.131",
-            "groups": 10
-            
+            "user_id": id,
+            "client_id": clientId,
+            "extended": "1",
+            "fields": "name, photo_30",
+            "v": "5.131"
         ]
-        AF.request(url, method: .get, parameters: parameters).responseJSON {
-            response in
-            print(response)
+        AF.request(url, method: .get, parameters: parameters).responseData { response in
+            guard let data = response.value  else { return}
+            let groups = try? JSONDecoder().decode( GroupResponse.self, from: data).response.items
+            completion(groups!)
         }
     }
-    func getPhoto(token: String){
+    func getPhoto(token: String, idFriend: Int, completion: @escaping ([Photo]) -> Void) {
         let url = baseUrl + "/photos.get"
         let parameters: Parameters = [
             "access_token": token,
-            "v": "5.131",
-            "count": 10
-            
+            "album_id": "profile",
+            "extended": "likes",
+            "photo_sizes": "0",
+            "client_id": clientId,
+            "v": "5.131"
         ]
-        AF.request(url, method: .get, parameters: parameters).responseJSON {
-            response in
-            print(response)
+        AF.request(url, method: .get, parameters: parameters).responseData { response in
+            guard let data = response.value  else { return}
+            let photos = try? JSONDecoder().decode( FriendPhotoResponse.self, from: data).response.items
+            completion(photos!)
         }
     }
-    
-    
+
 }
