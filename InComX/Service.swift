@@ -67,6 +67,7 @@ class Service {
 
 }
 
+
 //Lesson#7 Realm
 private  func saveData  <name: Object>(_ sData: [name]){
 
