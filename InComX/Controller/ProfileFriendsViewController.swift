@@ -19,15 +19,16 @@ class ProfileFriendsViewController: UIViewController {
    //переход на этот экран без сеги
     
     
-    var friend = [
-        Friends(name: "Олеся", image: UIImage(named: "image6"), gender: .Female),
-        Friends(name: "Иван", image: UIImage(named: "image2"), gender: .Male),
-        Friends(name: "Олег", image: UIImage(named: "image3"), gender: .Male),
-        Friends(name: "Петр", image: UIImage(named: "image4"), gender: .Male),
-        Friends(name: "Игорь", image: UIImage(named: "image5"), gender: .Male),
-        Friends(name: "Павел", image: UIImage(named: "image6"), gender: .Male),
-        
-    ]
+var friend = [
+//        Friends(name: "Олеся", image: UIImage(named: "image6"), gender: .Female),
+//        Friends(name: "Иван", image: UIImage(named: "image2"), gender: .Male),
+//        Friends(name: "Олег", image: UIImage(named: "image3"), gender: .Male),
+//        Friends(name: "Петр", image: UIImage(named: "image4"), gender: .Male),
+//        Friends(name: "Игорь", image: UIImage(named: "image5"), gender: .Male),
+//        Friends(name: "Павел", image: UIImage(named: "image6"), gender: .Male),
+//        
+   ]
+//    
     @IBOutlet var TableView: UITableView! {
         didSet {
             TableView.dataSource = self

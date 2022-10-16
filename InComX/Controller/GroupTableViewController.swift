@@ -6,21 +6,22 @@
 //
 
 import UIKit
+import RealmSwift
 
 class GroupTableViewController: UITableViewController {
 
     
-    var group = [
-    Group(name: "Автопром", image: UIImage(named: "image15")),
-    Group(name: "Доставка еды", image: UIImage(named: "image16")),
-    Group(name: "Теплые полы", image: UIImage(named: "image17")),
-    Group(name: "Плитка он-лайн", image: UIImage(named: "image18")),
-    Group(name: "Скульпторы людей", image: UIImage(named: "image19")),
-    Group(name: "Программирование", image: UIImage(named: "2hmedia")),
-    Group(name: "Домашние питомцы", image: UIImage(named: "andrei")),
-    
-    ]
-    
+//    var group = [
+//    Group(name: "Автопром", image: UIImage(named: "image15")),
+//    Group(name: "Доставка еды", image: UIImage(named: "image16")),
+//    Group(name: "Теплые полы", image: UIImage(named: "image17")),
+//    Group(name: "Плитка он-лайн", image: UIImage(named: "image18")),
+//    Group(name: "Скульпторы людей", image: UIImage(named: "image19")),
+//    Group(name: "Программирование", image: UIImage(named: "2hmedia")),
+//    Group(name: "Домашние питомцы", image: UIImage(named: "andrei")),
+//    
+//    ]
+//    
    
     
     override func viewDidLoad() {
