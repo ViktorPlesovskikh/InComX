@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FriendsTableViewController: UITableViewController {
     
@@ -14,40 +15,43 @@ class FriendsTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         animateTableView()
     }
-    
+    let session = session.shared
+    let Service = Service()
+    let realm = try! Realm()
+    var friend = [User]()
     
     
    
-    var filtredFriens = [Friends]()
-    var friend = [
-        Friends(name: "Олеся", image: UIImage(named: "image29"), gender: .Female),
-        Friends(name: "Иван", image: UIImage(named: "krisjanisk"), gender: .Male),
-        Friends(name: "Олег", image: UIImage(named: "mans"), gender: .Male),
-        Friends(name: "Петр", image: UIImage(named: "image19"), gender: .Male),
-        Friends(name: "Игорь", image: UIImage(named: "image9"), gender: .Male),
-        Friends(name: "Павел", image: UIImage(named: "2h-media"), gender: .Male),
-        Friends(name: "Дмитрий", image: UIImage(named: "image10"), gender: .Male),
-        Friends(name: "Антон", image: UIImage(named: "image11"), gender: .Male),
-        Friends(name: "Степан", image: UIImage(named: "image12"), gender: .Male),
-        Friends(name: "Ирина", image: UIImage(named: "image13"), gender: .Female),
-        Friends(name: "Ксения", image: UIImage(named: "image14"), gender: .Female),
-        Friends(name: "Василий2", image: UIImage(named: "image15"), gender: .Male),
-        Friends(name: "Кирилл", image: UIImage(named: "image1"), gender: .Male),
-        Friends(name: "Виктор", image: UIImage(named: "image2"), gender: .Male),
-        Friends(name: "Фёдор", image: UIImage(named: "image3"), gender: .Male),
-        Friends(name: "Богдан", image: UIImage(named: "image4"), gender: .Male),
-        Friends(name: "Константин", image: UIImage(named: "image5"), gender: .Male),
-        Friends(name: "Адам", image: UIImage(named: "image6"), gender: .Male),
-        Friends(name: "Леонид", image: UIImage(named: "image7"), gender: .Male),
-        Friends(name: "Роман", image: UIImage(named: "image8"), gender: .Male),
-        Friends(name: "Павел", image: UIImage(named: "image10"), gender: .Male),
-        Friends(name: "Артемий", image: UIImage(named: "image11"), gender: .Male),
-        Friends(name: "Петр", image: UIImage(named: "image12"), gender: .Male),
-        Friends(name: "Алексей", image: UIImage(named: "image13"), gender: .Male),
-        Friends(name: "Мирон", image: UIImage(named: "image14"), gender: .Male),
-        Friends(name: "Владимир", image: UIImage(named: "image16"), gender: .Male),
-    ]
-    
+ // var filtredFriens = [Friends]()
+//    var friend = [
+//        Friends(name: "Олеся", image: UIImage(named: "image29"), gender: .Female),
+//        Friends(name: "Иван", image: UIImage(named: "krisjanisk"), gender: .Male),
+//        Friends(name: "Олег", image: UIImage(named: "mans"), gender: .Male),
+//        Friends(name: "Петр", image: UIImage(named: "image19"), gender: .Male),
+//        Friends(name: "Игорь", image: UIImage(named: "image9"), gender: .Male),
+//        Friends(name: "Павел", image: UIImage(named: "2h-media"), gender: .Male),
+//        Friends(name: "Дмитрий", image: UIImage(named: "image10"), gender: .Male),
+//        Friends(name: "Антон", image: UIImage(named: "image11"), gender: .Male),
+//        Friends(name: "Степан", image: UIImage(named: "image12"), gender: .Male),
+//        Friends(name: "Ирина", image: UIImage(named: "image13"), gender: .Female),
+//        Friends(name: "Ксения", image: UIImage(named: "image14"), gender: .Female),
+//        Friends(name: "Василий2", image: UIImage(named: "image15"), gender: .Male),
+//        Friends(name: "Кирилл", image: UIImage(named: "image1"), gender: .Male),
+//        Friends(name: "Виктор", image: UIImage(named: "image2"), gender: .Male),
+//        Friends(name: "Фёдор", image: UIImage(named: "image3"), gender: .Male),
+//        Friends(name: "Богдан", image: UIImage(named: "image4"), gender: .Male),
+//        Friends(name: "Константин", image: UIImage(named: "image5"), gender: .Male),
+//        Friends(name: "Адам", image: UIImage(named: "image6"), gender: .Male),
+//        Friends(name: "Леонид", image: UIImage(named: "image7"), gender: .Male),
+//        Friends(name: "Роман", image: UIImage(named: "image8"), gender: .Male),
+//        Friends(name: "Павел", image: UIImage(named: "image10"), gender: .Male),
+//        Friends(name: "Артемий", image: UIImage(named: "image11"), gender: .Male),
+//        Friends(name: "Петр", image: UIImage(named: "image12"), gender: .Male),
+//        Friends(name: "Алексей", image: UIImage(named: "image13"), gender: .Male),
+//        Friends(name: "Мирон", image: UIImage(named: "image14"), gender: .Male),
+//        Friends(name: "Владимир", image: UIImage(named: "image16"), gender: .Male),
+//]
+//
     @IBOutlet override var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
@@ -67,26 +71,26 @@ class FriendsTableViewController: UITableViewController {
         //регистрация для таблицы шаблона ячейки для того чтобы ее можно было сипользовать в этом контроллере. Ячейку создал в XIB.
         tableView.register(UINib(nibName: "XibFriendsTableViewCell", bundle: nil), forCellReuseIdentifier: "FriendsXib")
         //После того, как создали ниже сортировку нам надо использовать этот метод. Его используем в didload то есть ниже
-        self .sortedFriends = sort(friend: friend)// Это итог того, как отсортировали друзей.
+   //     self .sortedFriends = sort(friend: friend)// Это итог того, как отсортировали друзей.
     }
    //Создаем Метод, который будет сортировать
-    private func sort(friend: [Friends]) -> [Character: [Friends]] {
-        var friendDict = [Character: [Friends]]()//Это массив, который будем заполнять
-        //Получаем первый символ
-        friend.forEach() { friends in
-            
-            guard let firstChar = friends.name.first else{return}
-            if var thisCharFriends = friendDict [firstChar] {
-                thisCharFriends.append(friends)
-                friendDict[firstChar] = thisCharFriends
-            }else {friendDict[firstChar] = [friends]
-                
-            }
-                
-        }    
-        return friendDict
-    }
-    
+//    private func sort(friend: [Friends]) -> [Character: [Friends]] {
+//        var friendDict = [Character: [Friends]]()//Это массив, который будем заполнять
+//        //Получаем первый символ
+//        friend.forEach() { friends in
+//
+//            guard let firstChar = friends.name.first else{return}
+//            if var thisCharFriends = friendDict [firstChar] {
+//                thisCharFriends.append(friends)
+//                friendDict[firstChar] = thisCharFriends
+//            } else {friendDict[firstChar] = [friends]
+//
+//            }
+//
+//        }
+//        return friendDict
+//    }
+//
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return sortedFriends.keys.count
@@ -130,7 +134,7 @@ class FriendsTableViewController: UITableViewController {
            if segue.identifier == "ShowIndividualColl", //проверка по какой СЕГЕ идет переход
            let destinationVC = segue.destination as? IndividualCollectionViewController,
            let indexPath = tableView.indexPathForSelectedRow {//ТО, на какую ячейку нажимаем. Создаем вручную!!!
-           let profileName = friend[indexPath.row].name
+           let profileName = friend[indexPath.row].firstName
                destinationVC.title = profileName //Надпись появляется в тапБаре на экране на который переходим
            }
        }

@@ -22,6 +22,7 @@
 //
 //}
 import Foundation
+import RealmSwift
 
 class GroupResponse: Decodable {
     let response: Groups

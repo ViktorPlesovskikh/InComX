@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+import RealmSwift
 //Простой свифт файл для заполнения списка друзей в таблице.
 
 

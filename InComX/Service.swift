@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import RealmSwift
 
 
 class Service {
@@ -65,3 +66,30 @@ class Service {
     }
 
 }
+
+//Lesson#7 Realm
+private  func saveData  <name: Object>(_ sData: [name]){
+
+       do{
+
+          let realm = try Realm()
+           print(realm.configuration.fileURL!)
+           realm.beginWrite()
+           realm.add(sData, update: .all)
+           try realm.commitWrite()
+
+       } catch{
+           print(error)
+       }
+     }
+
+
+     func readRealm <name: Object> (_ sData: [name]){
+         let realm = try! Realm()
+
+         let data = realm.objects(name.self)
+
+         print(data)
+     }
+
+ 
