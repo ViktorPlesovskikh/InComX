@@ -7,7 +7,7 @@
 
 //import Foundation
 //
-//
+
 class Session {
 //    
  static let shared = Session()
@@ -25,5 +25,5 @@ private init(){}
 //        //code
 //        self.Userid 
 //    }
-//
+
 }
